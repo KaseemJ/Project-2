@@ -1,3 +1,11 @@
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+}
+
 .list-group-item {
   line-height: 2.5;
 }
@@ -7,10 +15,11 @@
   padding-bottom: 10px;
 } */
 
-body {
+.background {
   background-image: url(http://www.hortongroup.com/hs-fs/hubfs/Services%20Rework/backgrounds/websites%20and%20custom/ecommerce%20background.png?t=1532867516794&width=640&height=334&name=ecommerce%20background.png);
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100%;
 }
 
 /* about line */
@@ -52,3 +61,28 @@ h1 {
   border: 1px solid rgb(119, 56, 119);
 }
 
+.banner {
+  background-image: url(http://www.hortongroup.com/hs-fs/hubfs/Services%20Rework/backgrounds/websites%20and%20custom/ecommerce%20background.png?t=1532867516794&width=640&height=334&name=ecommerce%20background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+/* banner name of main page */
+.display-4 {
+  color: rgb(148, 143, 143);
+  font-family: 'Playfair Display', serif;
+}
+
+/* banner about message */
+.lead {
+  color: white;
+  font-size: 10px;
+}
+
+.footer {
+  background-color: rgb(228, 228, 228);
+}
+
+hr {
+  font-weight: bolder;
+}

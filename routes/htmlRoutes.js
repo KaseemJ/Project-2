@@ -1,7 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Load index page
+  // Load index page or sign in page
   app.get("/", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("index", {
@@ -10,12 +10,16 @@ module.exports = function(app) {
       });
     });
   });
+  // content or search page
+  app.get("/content", function(req, res) {
+    res.render("content");
+  });
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+    db.Examples.findOne({ where: { id: req.params.id } }).then(function(data) {
       res.render("example", {
-        example: dbExample
+        example: data
       });
     });
   });
