@@ -9,9 +9,11 @@ module.exports = function(app) {
   });
 
   // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  app.post("/api/item", function(req, res) {
+    db.items.create(req.body).then(function(result) {
+      res.json(result);
+      console.log(result);
+
     });
   });
 

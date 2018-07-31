@@ -1,13 +1,10 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Load index page or sign in page
-  app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+  // Load index page
+  app.get("/home", function(req, res) {
+    db.items.findAll({ limit: 20 }).then(function(result) {
+      res.json(result);
     });
   });
   // content or search page
@@ -16,11 +13,9 @@ module.exports = function(app) {
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Examples.findOne({ where: { id: req.params.id } }).then(function(data) {
-      res.render("example", {
-        example: data
-      });
+  app.get("/:category", function(req, res) {
+    db.items.findOne({ where: { item_category: req.params.category }}).then(function(result) {
+      res.json(result);
     });
   });
 
