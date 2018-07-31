@@ -1,3 +1,39 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+/* .logo {
+  height: 70px;
+  padding-bottom: 10px;
+} */
+
+body {
+  background-image: url(http://www.hortongroup.com/hs-fs/hubfs/Services%20Rework/backgrounds/websites%20and%20custom/ecommerce%20background.png?t=1532867516794&width=640&height=334&name=ecommerce%20background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+p {
+  color: white;
+  font-size: 10px;
+}
+
+.mt-5 {
+  font-size: 12px;
+}
+
+h1 {
+  color: black;
+}
+
+.form-label-group {
+  color: black;
+}
+
+.checkbox {
+  color: black;
+}
+
+.col-4 {
+  padding: 55px;
+}
