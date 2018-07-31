@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <img src="http://via.placeholder.com/150" alt="Placeholder image for user">
+        </div>
+        <div class="col-md-4">
+            <h1>{{user.dataValues.user_name}}</h1>
+            <h4>Your ID: {{user.dataValues.id}}</h4>
+            <h4>Email: {{user.dataValues.email}}</h4>
+            <h4>Phone: {{user.dataValues.phone_number}}</h4>
+        </div>
+        <div class="col-md 4"></div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+        <H2>Your Postings</H2>
+    </div>
+    <div class="row">
+        <table style="min-width:100%">
+            <thead>
+                <td><strong>Name</strong></td>
+                <td><strong>Price</strong></td>
+                <td><strong>Description</strong></td>
+                <td><strong>Location</strong></td>
+                <td><strong>Image URL</strong></td>
+                <td><strong>Category</strong></td>
+            </thead>
+            {{#each user.items}}
+            <tr>
+                <td>{{this.dataValues.item_name}}</td>
+                <td>{{this.dataValues.item_price}}</td>
+                <td>{{this.dataValues.item_description}}</td>
+                <td>{{this.dataValues.item_location}}</td>
+                <td>{{this.dataValues.item_img_url}}</td>
+                <td>{{this.dataValues.item_category}}</td>
+                <td>
+                    <button id="update-post" data-id="{{this.dataValues.item_id}}">Update Post</button>
+                </td>
+                <td>
+                    <button id="delete-post" data-id="{{this.dataValues.item_id}}"="">Delete Post</button>
+                </td>
+            </tr>
+            <tr></tr>
+            {{/each}}
+        </table>
+    </div>
+
+</div>
+
+</div>

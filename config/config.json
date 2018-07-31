@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Epsilon27!",
+    "password": "password",
     "database": "ebay_db",
     "host": "localhost",
     "dialect": "mysql"
