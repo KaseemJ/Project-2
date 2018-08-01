@@ -37,7 +37,7 @@ $(document).ready(function() {
       user_name: userName,
       phone_number: phoneNumber
     }).then(function(data) {
-      window.location.replace(data);
+      window.location.href="/home";
       // If there's an error, handle it by throwing up a boostrap alert
     }).catch(handleLoginErr);
   }

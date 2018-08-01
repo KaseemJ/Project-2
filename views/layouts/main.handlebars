@@ -2,64 +2,125 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
 
-  <title>Home Page</title>
+    <title>Home Page</title>
 </head>
 
 <body>
-  {{{body}}}
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">KEMsList</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="my_account">My Account</button>
+                </form>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sell</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Automotive</a>
+                        <a class="dropdown-item" href="#">Books</a>
+                        <a class="dropdown-item" href="#">Clothing</a>
+                        <a class="dropdown-item" href="#">Electronics</a>
+                        <a class="dropdown-item" href="#">Furniture</a>
+                        <a class="dropdown-item" href="#">Apliances</a>
+                        <a class="dropdown-item" href="#">Tools</a>
+                        <a class="dropdown-item" href="#">Sports</a>
+                        <a class="dropdown-item" href="#">Art</a>
+                        <a class="dropdown-item" href="#">Other</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Sort-by
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Price (high-low)</a>
+                        <a class="dropdown-item" href="#">Price (low-high)</a>
+                        <a class="dropdown-item" href="#">Most Recent</a>
+                        <a class="dropdown-item" href="#">Location</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    {{{body}}}
 
-  <script type="text/javascript">
-  $(document).ready(function(){
+    <script type="text/javascript">
+        $(document).ready(function () {
 
-    $("#delete-post").on("click", function(){
-        var item_id= $(this).data("id")
-        console.log(item_id)
-        $.ajax({
-            url: "/items/"+ item_id,
-            method: "DELETE"
-        }).then(function(){
-            alert("Item id: "+ item_id+ " deleted")
-            location.reload()
-        })
-    })
-    $("#edit-post").on("click", function(e){
-        e.preventDefault()
-        console.log(this)
-        var id= $(this).data("id")
-        var user= $(this).data("userid")
-        console.log(user)
-        var editedItem= {
-            item_name: $("#item_name").val().trim(),
-            item_price: $("#item_price").val().trim(),
-            item_description: $("#item_description").val().trim(),
-            item_img_url: $("#item_img_url").val().trim(),
-            item_category: $("#item_category").val().trim(),
-            item_location: $("#item_location").val().trim(),
-        }
-        $.ajax({
-            url: "/myaccount/"+ user+"/update/"+ id,
-            type: "PUT",
-            data: editedItem
-        }).then(function(){
-            alert("Item Id: "+ id+ "updated!")
-            window.location.href=("/myaccount/"+ user)
-        })
-    })
-
-
-
+            $("#delete-post").on("click", function () {
+                console.log(this)
+                var item_id = $(this).data("id")
+                console.log(item_id)
+                $.ajax({
+                    url: "/items/" + item_id,
+                    method: "DELETE"
+                }).then(function () {
+                    alert("Item id: " + item_id + " deleted")
+                    location.reload()
+                })
+            })
+            $("#edit-post").on("click", function (e) {
+                e.preventDefault()
+                console.log(this)
+                var id = $(this).data("id")
+                var user = $(this).data("userid")
+                console.log(user)
+                var editedItem = {
+                    item_name: $("#item_name").val().trim(),
+                    item_price: $("#item_price").val().trim(),
+                    item_description: $("#item_description").val().trim(),
+                    item_img_url: $("#item_img_url").val().trim(),
+                    item_category: $("#item_category").val().trim(),
+                    item_location: $("#item_location").val().trim(),
+                }
+                $.ajax({
+                    url: "/myaccount/" + user + "/update/" + id,
+                    type: "PUT",
+                    data: editedItem
+                }).then(function () {
+                    alert("Item Id: " + id + "updated!")
+                    window.location.href = ("/myaccount/" + user)
+                })
+            })
 
 
+            $("#my_account").on("click", function (e) {
+                e.preventDefault();
+                $.get("/api/user_data").then(function (result) {
+                    console.log(result.id);
+                    window.location.href = ("/myaccount/" + result.id);
+                })
+            })
 
 
 
 
-})</script>
+
+
+        })</script>
 </body>
 
 </html>
