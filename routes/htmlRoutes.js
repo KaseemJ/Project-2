@@ -11,13 +11,22 @@ module.exports = function(app) {
   app.get("/content", function(req, res) {
     res.render("content");
   });
+  app.get("/", function(req, res) {
+    res.render("index");
+  });
 
-  // Load example page and pass in an example by id
-  // app.get("/:category", function(req, res) {
-  //   db.items.findOne({ where: { itemCategory: req.params.category } }).then(function (result) {
-  //     res.json(result);
-  //   });
-  // });
+  //Load example page and pass in an example by id
+  app.get("/:category", function(req, res) {
+    db.items
+      .findOne({
+        where: {
+          itemCategory: req.params.category
+        }
+      })
+      .then(function(result) {
+        res.json(result);
+      });
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
