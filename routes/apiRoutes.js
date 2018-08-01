@@ -17,6 +17,12 @@ module.exports = function(app) {
     });
   });
 
+  app.put("/myaccount/:user_id/update/:item_id", function(req,res){
+    db.items.update(req.body, {where: {item_id:req.params.item_id}}).then(function(result){
+      res.json(result)
+    })
+  })
+
   app.post("/api/users", function(req,res){
     db.users.create(req.body).then(function(result){
       res.json(result)

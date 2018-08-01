@@ -24,11 +24,16 @@ module.exports = function (app) {
         id: req.params.user_id
       }
     }).then(function (result) {
-      console.log(result.items.dataValues)
       res.render("user", { user: result });
     });
   });
 
+  app.get("/myaccount/:user_id/update/:item_id", function(req,res){
+    db.items.findOne({where: {item_id: req.params.item_id}}).then(function(result){
+      console.log(result)
+      res.render("update", {item: result})
+    })
+  })
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
     res.render("404");
