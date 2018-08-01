@@ -29,8 +29,10 @@
     })
     $("#edit-post").on("click", function(e){
         e.preventDefault()
+        console.log(this)
         var id= $(this).data("id")
-        var user= $(this).data("userId")
+        var user= $(this).data("userid")
+        console.log(user)
         var editedItem= {
             item_name: $("#item_name").val().trim(),
             item_price: $("#item_price").val().trim(),
