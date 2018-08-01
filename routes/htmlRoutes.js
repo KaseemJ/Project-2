@@ -37,7 +37,11 @@ module.exports = function (app) {
         res.json(result);
       });
   });
-
+   app.get("/myaccount/:userId/post", function(req,res){
+      console.log(req.params.userId)
+      res.render("post")
+    })
+ 
   app.get("/myaccount/:user_id", function (req, res) {
     console.log(req.params.user_id)
     db.User.findOne({
@@ -49,8 +53,6 @@ module.exports = function (app) {
       console.log(result.items)
       res.render("user", { user: result });
     });
-
- 
 
  
   // Here we've add our isAuthenticated middleware to this route.

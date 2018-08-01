@@ -91,4 +91,10 @@ module.exports = function (app) {
 
     });
   });
+  app.post("/myaccount/:userId/post", function(req,res){
+    db.items.create(req.body).then(function(result){
+      console.log(result)
+      res.json(result)
+    })
+  })
 };
