@@ -71,10 +71,24 @@ module.exports = function (app) {
     });
   });
 
+  app.put("/myaccount/:user_id/update/:item_id", function(req,res){
+    db.items.update(req.body, {where: {item_id:req.params.item_id}}).then(function(result){
+      res.json(result)
+    })
+  })
+
+  app.post("/api/users", function(req,res){
+    db.users.create(req.body).then(function(result){
+      res.json(result)
+      console.log(result)
+    })
+  })
+
   // Delete an example by id
-  app.delete("/api/examples/:id", function (req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
-      res.json(dbExample);
+  app.delete("/items/:item_id", function(req, res) {
+    db.items.destroy({ where: { item_id: req.params.item_id } }).then(function(result) {
+      res.json(result);
+
     });
   });
 };
