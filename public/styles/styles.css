@@ -86,3 +86,55 @@ h1 {
 hr {
   font-weight: bolder;
 }
+
+.rounded-circle {
+  margin-left: 20px;
+}
+
+/* Style all font awesome icons */
+.fa {
+  font-size: 30px; 
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 15%;
+  display: flex; 
+  align-items: center;
+  justify-content: center;  
+}
+
+
+.fa-container {
+  display: flex;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 1;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-snapchat {
+  background: rgb(228, 228, 53);
+  color: white;
+}
+
+.fa-instagram {
+  background: blue;
+  color: white;
+}
+
