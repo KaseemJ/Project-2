@@ -72,3 +72,7 @@ form.login {
 .amazon {
   min-width: 700px;
 }
+
+p {
+  font-family: 'Alegreya', serif;
+}
