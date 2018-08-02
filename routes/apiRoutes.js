@@ -54,8 +54,22 @@ module.exports = function (app) {
   });
 
 
+app.put("/items/:item_id", function(req, res){
+  console.log(req.body)
+  db.items.findOne({where: {item_id: req.params.item_id}}).then(function(item){
+    console.log(item.dataValues.in_cart)
+    if(item.dataValues.in_cart){
+      console.log("Item is reserved")
+      res.send("Item is reserved")
+    }else{
+  
+   db.items.update(req.body,{where: {item_id: req.params.item_id}}).then(function(result){
 
-
+   res.end()
+  })
+ }
+})
+})
   // Get all examples
   app.get("/api/examples", function (req, res) {
     db.Example.findAll({}).then(function (dbExamples) {

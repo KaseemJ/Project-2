@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Your ID: {{items.0.dataValues.in_cart}}</h2>
+        </div>
+        <div class="col-md 4"></div>
+        <div class="col-md-2"></div>
+    </div>
+    <br><br>
+    <div class="row">
+        <H4>Your Cart</H4>
+    </div>
+    <div class="row">
+        <table style="min-width:100%">
+            <thead>
+                <td><strong>Name</strong></td>
+                <td><strong>Price</strong></td>
+                <td><strong>Description</strong></td>
+                <td><strong>Location</strong></td>
+                <td><strong>Image URL</strong></td>
+                <td><strong>Category</strong></td>
+            </thead>
+            {{#each items}}
+            <tr>
+                <td>{{this.dataValues.item_name}}</td>
+                <td>{{this.dataValues.item_price}}</td>
+                <td>{{this.dataValues.item_description}}</td>
+                <td>{{this.dataValues.item_location}}</td>
+                <td>{{this.dataValues.item_img_url}}</td>
+                <td>{{this.dataValues.item_category}}</td>
+            </tr>
+            {{/each}}
+        </table>
+        <button>Checkout</button>
+    </div>
+
+</div>
+
+</div>
