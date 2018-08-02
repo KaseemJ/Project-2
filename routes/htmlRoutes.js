@@ -9,7 +9,7 @@ module.exports = function(app) {
   // Load index page
   app.get("/home", isAuthenticated, function(req, res) {
     db.items.findAll({ limit: 20 }).then(function() {
-      res.render("content");
+      res.render("new");
     });
   });
 
