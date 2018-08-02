@@ -1,144 +1,88 @@
-html {
-  height: 100vh;
+body {
+  background: radial-gradient(#ada9a9 5%, white 25%,#c5c4c4 50%);
 }
 
-body {
-  height: 100%;
+.border {
+  margin-bottom: 30px;
 }
 
 .list-group-item {
   line-height: 2.5;
 }
 
-/* .logo {
-  height: 70px;
-  padding-bottom: 10px;
-} */
-
-.background {
-  background-image: url(http://www.hortongroup.com/hs-fs/hubfs/Services%20Rework/backgrounds/websites%20and%20custom/ecommerce%20background.png?t=1532867516794&width=640&height=334&name=ecommerce%20background.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-}
-
-/* about line */
-p {
-  color: white;
-  font-size: 10px;
-}
-
 /* copyright date */
-.mt-5 {
-  color: rgb(80, 75, 75);
+.footer-copyright {
+  color: rgb(161, 158, 158);
   font-size: 15px;
   font-family: 'Playfair Display', serif;
+  text-align: center;
 }
 
 /* site name */
-h1 {
+h5 {
   color: rgb(148, 143, 143);
   font-family: 'Playfair Display', serif;
-}
-
-/* email address input */
-.form-label-group {
-  color: rgb(167, 164, 164);
-  font-family: 'Playfair Display', serif;
-}
-
-.checkbox {
-  color: rgb(167, 164, 164);
-  font-family: 'Playfair Display', serif;
-}
-
-.col-4 {
-  padding: 60px;
 }
 
 /* sign in border */
 .btn {
-  border: 1px solid rgb(119, 56, 119);
+  border: 1px solid rgb(12, 12, 12);
 }
 
-.banner {
-  background-image: url(http://www.hortongroup.com/hs-fs/hubfs/Services%20Rework/backgrounds/websites%20and%20custom/ecommerce%20background.png?t=1532867516794&width=640&height=334&name=ecommerce%20background.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right;
-}
-/* banner name of main page */
-.display-4 {
-  color: rgb(148, 143, 143);
-  font-family: 'Playfair Display', serif;
-}
-
-/* banner about message */
-.lead {
-  color: white;
-  font-size: 10px;
-}
-
-.footer {
-  background-color: rgb(228, 228, 228);
-}
-
-hr {
-  font-weight: bolder;
-}
-
-.rounded-circle {
-  margin-left: 20px;
-}
-
-/* Style all font awesome icons */
-.fa {
-  font-size: 30px; 
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 15%;
-  display: flex; 
-  align-items: center;
-  justify-content: center;  
-}
-
-
-.fa-container {
-  display: flex;
-}
-
-/* Add a hover effect if you want */
-.fa:hover {
-  opacity: 1;
-}
-
-/* Set a specific color for each brand */
-
-/* Facebook */
-.fa-facebook {
-  background: #3B5998;
-  color: white;
-}
-
-/* Twitter */
-.fa-twitter {
-  background: #55ACEE;
-  color: white;
-}
-
-.fa-snapchat {
-  background: rgb(228, 228, 53);
-  color: white;
-}
-
-.fa-instagram {
-  background: blue;
-  color: white;
+.page-footer {
+  background-color: rgb(247, 244, 244);
+  padding-top: 5px;
 }
 
 form.signup,
 form.login {
   margin-top: 50px;
 }
+
+/* hover for the card picture */
+.zoom {
+  transition: transform .1s; /* Animation */
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.container-row1, .container-row2 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.carousel {
+  margin-top: 20px;
+
+}
+
+.white-text {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.grey-text {
+  margin-left: 110px;
+  font-family: 'Playfair Display', serif;
+}
+
+.amazon {
+  min-width: 700px;
+}
+
+p {
+  font-family: 'Alegreya', serif;
+}
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+
+.card a {
+  text-decoration: none; 
+  color:inherit;
+}
+
