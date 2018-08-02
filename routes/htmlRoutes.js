@@ -44,6 +44,10 @@ module.exports = function (app) {
     res.render("index");
   });
 
+  app.get("/new", function(req, res){
+    res.render("new");
+  });
+
   //Load example page and pass in an example by id
   app.get("/:category", function(req, res) {
     db.items
