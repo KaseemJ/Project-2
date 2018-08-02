@@ -1,21 +1,15 @@
 <div class="container">
-    <div class="row">
-       
-        <div class="col-md-4">
-            <h1>{{user.dataValues.user_name}}</h1>
-            <h4>Your ID: {{user.dataValues.id}}</h4>
-            <h4>Email: {{user.dataValues.email}}</h4>
-            <h4>Phone: {{user.dataValues.phone_number}}</h4>
-        </div>
-        <div class="list-group">
-            <a href="/logout" class="list-group-item list-group-item-action active bg-danger">
-                Log Out
-            </a>
-        </div>
-        <div class="col-md 4"></div>
-        <div class="col-md-2"></div>
-    </div>
-    <div class="row">
+   <div class="jumbotron">
+        <h1 class="display-4">My Account</h1>
+        <hr class="my-4">
+        <h1>{{user.dataValues.user_name}}</h1>
+        <h4>Email: {{user.dataValues.email}}</h4>
+        <h4>Phone: {{user.dataValues.phone_number}}</h4>
+        <h4>Your ID: {{user.dataValues.id}}</h4>
+        <p class="lead">
+            <a class="btn btn-primary bg-danger btn-lg " href="/logout" role="button">Log Out</a>
+        </p>
+        <hr class="my-4">
         <H2>Your Postings</H2>
     </div>
 </div>
