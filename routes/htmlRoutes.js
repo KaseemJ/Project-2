@@ -73,10 +73,14 @@ module.exports = function(app) {
       res.render("user", { user: result });
     });
 
-    // Here we've add our isAuthenticated middleware to this route.
-    // If a user who is not logged in tries to access this route they will be redirected to the signup page
+    app.get("/myaccount/:user_id/cart", function(req, res){
+      db.items.findAll({where: {in_cart: req.params.user_id}}).then(function(cart){
+        console.log(cart)
+        res.render("cart", {items: cart})}
+      )
 
-    // content or search page
+    })
+
 
     app.get("/new", function(req, res) {
       res.render("new");

@@ -8,7 +8,8 @@ module.exports = function (sequelize, DataTypes) {
     item_description: DataTypes.TEXT,
     item_location: DataTypes.STRING,
     item_img_url: DataTypes.TEXT,
-    item_category: DataTypes.STRING
+    item_category: DataTypes.STRING,
+    in_cart: {type:DataTypes.STRING, allowNull:true}
   });
   
 

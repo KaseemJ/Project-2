@@ -4,7 +4,7 @@
             <img class="img-fluid" src="{{item.dataValues.item_img_url}}" alt="Placeholder image for user">
         </div>
         <div class="col-md-4">
-            <h1>{{item.dataValues.item_name}}</h1>
+            <h1 id="item" data-in_cart="{{item.dataValues.in_cart}}"="">{{item.dataValues.item_name}}</h1>
             <h4>Poster's ID: {{item.dataValues.UserId}}</h4>
             <h4>Price: {{item.dataValues.item_price}}</h4>
             <h6>Description: {{item.dataValues.item_description}}</h6>
@@ -16,7 +16,7 @@
         <div class="col-md-2"></div>
     </div>
  <div class="row">
-     <button>Add to Cart</button>
+     <button id="add-to-cart" data-item_id="{{item.dataValues.item_id}}">Add to Cart</button>
 </div>   
 
 </div>
