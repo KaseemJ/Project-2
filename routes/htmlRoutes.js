@@ -8,9 +8,7 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
   // Load index page
   app.get("/home", isAuthenticated, function(req, res) {
-    db.items.findAll({ limit: 20 }).then(function() {
-      res.render("new");
-    });
+    res.render("new");
   });
 
   app.get("/", function(req, res) {
