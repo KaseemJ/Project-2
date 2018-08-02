@@ -29,7 +29,14 @@ module.exports = function (app) {
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
+    app.get("/items/:item_id", function(req,res){
+      console.log(req.params.item_id)
+      db.items.findOne({where: {item_id: req.params.item_id}}).then(function(result){
+        console.log(result)
+        res.render("item", {item: result} )
+      })
 
+    })
   // Load example page and pass in an example by id
   app.get("/api/:category", function (req, res) {
     db.items.findAll({ where: { item_category: req.params.category } })
@@ -53,6 +60,8 @@ module.exports = function (app) {
       console.log(result.items)
       res.render("user", { user: result });
     });
+
+
 
  
   // Here we've add our isAuthenticated middleware to this route.
