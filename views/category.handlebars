@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="card-columns">
+        {{#each item}}
+        <div class="card">
+            <a href="/items/{{this.dataValues.item_id}}">
+                <img class="card-img-top" src="{{this.dataValues.item_img_url}}" alt="">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title">{{this.dataValues.item_name}}</h5>
+                <h6 class="card-text">${{this.dataValues.item_price}}</h6>
+                <p class="card-text" style="color:black;">{{this.dataValues.item_description}}</p>
+                <p class="card-text">
+                    <small class="text-muted">{{this.dataValues.item_location}}</small>
+                </p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

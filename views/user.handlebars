@@ -1,13 +1,16 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-2">
-            <img src="http://via.placeholder.com/150" alt="Placeholder image for user">
-        </div>
+       
         <div class="col-md-4">
             <h1>{{user.dataValues.user_name}}</h1>
             <h4>Your ID: {{user.dataValues.id}}</h4>
             <h4>Email: {{user.dataValues.email}}</h4>
             <h4>Phone: {{user.dataValues.phone_number}}</h4>
+        </div>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active bg-danger">
+                Log Out
+            </a>
         </div>
         <div class="col-md 4"></div>
         <div class="col-md-2"></div>
@@ -15,36 +18,29 @@
     <div class="row">
         <H2>Your Postings</H2>
     </div>
-    <div class="row">
-        <table style="min-width:100%">
-            <thead>
-                <td><strong>Name</strong></td>
-                <td><strong>Price</strong></td>
-                <td><strong>Description</strong></td>
-                <td><strong>Location</strong></td>
-                <td><strong>Image URL</strong></td>
-                <td><strong>Category</strong></td>
-            </thead>
-            {{#each user.items}}
-            <tr>
-                <td>{{this.dataValues.item_name}}</td>
-                <td>{{this.dataValues.item_price}}</td>
-                <td>{{this.dataValues.item_description}}</td>
-                <td>{{this.dataValues.item_location}}</td>
-                <td>{{this.dataValues.item_img_url}}</td>
-                <td>{{this.dataValues.item_category}}</td>
-                <td>
-                    <a href="/myaccount/{{this.dataValues.UserId}}/update/{{this.dataValues.item_id}}"><button id="update-post" data-id="{{this.dataValues.item_id}}">Update Post</button></a>
-                </td>
-                <td>
-                    <button id="delete-post" data-id="{{this.dataValues.item_id}}"="">Delete Post</button>
-                </td>
-            </tr>
-            <tr></tr>
-            {{/each}}
-        </table>
-    </div>
-
 </div>
+<div class="container">
+    <div class="card-columns">
+        {{#each user.items}}
 
+        <div class="card">
+            <img class="card-img-top" src="{{this.dataValues.item_img_url}}" alt="Listing Image">
+            <div class="card-body">
+                <h5 class="card-title">Title: {{this.dataValues.item_name}}</h5>
+                <h6 class="card-text">Location: {{this.dataValues.item_location}}</h6>
+                <h6 class="card-text">Category: {{this.dataValues.item_category}}</h6>
+                <h6 class="card-text">Price: {{this.dataValues.item_price}}</h6>
+                <p class="card-text" style="color:black;">Description: {{this.dataValues.item_description}}</p>
+                <p class="card-text" style="color:black;">Created: {{this.dataValues.createdAt}}</p>
+                <p class="card-text" style="color:black;">Updated: {{this.dataValues.updatedAt}}</p>
+            </div>
+
+            <a href="/myaccount/{{this.dataValues.UserId}}/update/{{this.dataValues.item_id}}">
+                <button type="button" class="btn btn-success" id="update-post" data-id="{{this.dataValues.item_id}}">Update Post</button>
+            </a>
+            <button type="button" class="btn btn-danger" id="delete-post" data-id="{{this.dataValues.item_id}}"="">Delete Post</button>
+
+        </div>
+        {{/each}}
+    </div>
 </div>

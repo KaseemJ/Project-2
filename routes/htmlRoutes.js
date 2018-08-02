@@ -8,7 +8,7 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (app) {
   // Load index page
-  app.get("/home",isAuthenticated, function (req, res) {
+  app.get("/home", isAuthenticated, function (req, res) {
     db.items.findAll({ limit: 20 }).then(function (result) {
       res.render("content");
     });
@@ -29,7 +29,22 @@ module.exports = function (app) {
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
-    app.get("/items/:item_id", function(req,res){
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+  // This loads all items in specific Category to category page
+  app.get("/categories/:category", isAuthenticated, function(req,res){
+    console.log(req.params.category)
+    db.items.findAll({where: {item_category: req.params.category}}).then(function(result){
+      console.log(result)
+      res.render("category", {item: result} )
+    })
+  })
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+  // This loads in the items by specific ID
+    app.get("/items/:item_id", isAuthenticated, function(req,res){
       console.log(req.params.item_id)
       db.items.findOne({where: {item_id: req.params.item_id}}).then(function(result){
         console.log(result)
@@ -38,18 +53,18 @@ module.exports = function (app) {
 
     })
   // Load example page and pass in an example by id
-  app.get("/api/:category", function (req, res) {
+  app.get("/api/:category", isAuthenticated, function (req, res) {
     db.items.findAll({ where: { item_category: req.params.category } })
       .then(function (result) {
         res.json(result);
       });
   });
-   app.get("/myaccount/:userId/post", function(req,res){
+   app.get("/myaccount/:userId/post", isAuthenticated, function(req,res){
       console.log(req.params.userId)
       res.render("post")
     })
  
-  app.get("/myaccount/:user_id", function (req, res) {
+  app.get("/myaccount/:user_id", isAuthenticated, function (req, res) {
     console.log(req.params.user_id)
     db.User.findOne({
       include: [db.items],
@@ -71,7 +86,7 @@ module.exports = function (app) {
 
   //Load example page and pass in an example by id
 
-  app.get("/myaccount/:user_id/update/:item_id", function(req,res){
+  app.get("/myaccount/:user_id/update/:item_id", isAuthenticated, function(req,res){
     db.items.findOne({where: {item_id: req.params.item_id}}).then(function(result){
       console.log(result)
       res.render("update", {item: result})
