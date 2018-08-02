@@ -1,25 +1,9 @@
-html {
-  height: 100vh;
-}
-
 body {
-  height: 100%;
+  background-color: gray;
 }
 
 .list-group-item {
   line-height: 2.5;
-}
-
-/* .logo {
-  height: 70px;
-  padding-bottom: 10px;
-} */
-
-.background {
-  background-image: url(http://www.hortongroup.com/hs-fs/hubfs/Services%20Rework/backgrounds/websites%20and%20custom/ecommerce%20background.png?t=1532867516794&width=640&height=334&name=ecommerce%20background.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
 }
 
 /* about line */
@@ -29,7 +13,7 @@ p {
 }
 
 /* copyright date */
-.mt-5 {
+.footer-copyright {
   color: rgb(80, 75, 75);
   font-size: 15px;
   font-family: 'Playfair Display', serif;
@@ -42,7 +26,7 @@ h1 {
 }
 
 /* email address input */
-.form-label-group {
+/* .form-label-group {
   color: rgb(167, 164, 164);
   font-family: 'Playfair Display', serif;
 }
@@ -54,91 +38,36 @@ h1 {
 
 .col-4 {
   padding: 60px;
-}
+} */
 
 /* sign in border */
 .btn {
   border: 1px solid rgb(119, 56, 119);
 }
 
-.banner {
-  background-image: url(http://www.hortongroup.com/hs-fs/hubfs/Services%20Rework/backgrounds/websites%20and%20custom/ecommerce%20background.png?t=1532867516794&width=640&height=334&name=ecommerce%20background.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right;
-}
-/* banner name of main page */
-.display-4 {
-  color: rgb(148, 143, 143);
-  font-family: 'Playfair Display', serif;
-}
-
-/* banner about message */
-.lead {
-  color: white;
-  font-size: 10px;
-}
-
-.footer {
-  background-color: rgb(228, 228, 228);
-}
-
-hr {
-  font-weight: bolder;
-}
-
-.rounded-circle {
-  margin-left: 20px;
-}
-
-/* Style all font awesome icons */
-.fa {
-  font-size: 30px; 
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 15%;
-  display: flex; 
-  align-items: center;
-  justify-content: center;  
-}
-
-
-.fa-container {
-  display: flex;
-}
-
-/* Add a hover effect if you want */
-.fa:hover {
-  opacity: 1;
-}
-
-/* Set a specific color for each brand */
-
-/* Facebook */
-.fa-facebook {
-  background: #3B5998;
-  color: white;
-}
-
-/* Twitter */
-.fa-twitter {
-  background: #55ACEE;
-  color: white;
-}
-
-.fa-snapchat {
-  background: rgb(228, 228, 53);
-  color: white;
-}
-
-.fa-instagram {
-  background: blue;
-  color: white;
+.page-footer {
+  background-color: rgb(90, 83, 83);
 }
 
 form.signup,
 form.login {
   margin-top: 50px;
+}
+
+/* hover for the card picture */
+.zoom {
+  padding: 50px;
+  background-color: green;
+  transition: transform .2s; /* Animation */
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.card-text {
+  text-align: center;
 }
