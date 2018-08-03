@@ -12,119 +12,106 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <title>Home Page</title>
-    </head>
+</head>
 
-    <body>
-        <!-- Nav Bar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-inverse navbar-fixed-top">
-            <a class="navbar-brand" href="/home">KEMsList</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <form class="form-inline my-2 my-lg-0">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="my_account">My Account</button>
-                    </form>
-                    <form class="form-inline my-2 my-lg-0">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="my_cart">My Cart</button>
-                    </form>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="Sell">Sell</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            Categories
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/categories/Automotive">Automotive</a>
-                            <a class="dropdown-item" href="/categories/Books">Books</a>
-                            <a class="dropdown-item" href="/categories/Clothing">Clothing</a>
-                            <a class="dropdown-item" href="/categories/Electronics">Electronics</a>
-                            <a class="dropdown-item" href="/categories/Furniture">Furniture</a>
-                            <a class="dropdown-item" href="/categories/Apliances">Apliances</a>
-                            <a class="dropdown-item" href="/categories/Tools">Tools</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            Sort-by
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Price (high-low)</a>
-                            <a class="dropdown-item" href="#">Price (low-high)</a>
-                            <a class="dropdown-item" href="#">Most Recent</a>
-                            <a class="dropdown-item" href="#">Location</a>
-                        </div>
-                    </li>
-                </ul>
+<body>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/home">KEMsList</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="my_account">My Account</button>
                 </form>
-
-            </div>
-        </nav>
-        {{{body}}}
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-            crossorigin="anonymous"></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("#delete-post").on("click", function () {
-                    console.log(this)
-                    var item_id = $(this).data("id")
-                    console.log(item_id)
-                    $.ajax({
-                        url: "/items/" + item_id,
-                        method: "DELETE"
-                    }).then(function () {
-                        alert("Item id: " + item_id + " deleted")
-                        location.reload()
-                    })
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="my_cart">My Cart</button>
+                </form>
+                </li>
+                <a class="nav-link" id="Sell">
+                    <li class="nav-item">
+                        Sell
+                    </li>
+                </a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/categories/Automotive">Automotive</a>
+                        <a class="dropdown-item" href="/categories/Books">Books</a>
+                        <a class="dropdown-item" href="/categories/Clothing">Clothing</a>
+                        <a class="dropdown-item" href="/categories/Electronics">Electronics</a>
+                        <a class="dropdown-item" href="/categories/Furniture">Furniture</a>
+                        <a class="dropdown-item" href="/categories/Apliances">Apliances</a>
+                        <a class="dropdown-item" href="/categories/Tools">Tools</a>
+                    </div>
+                </li>
+            </ul>
+            <a style="float:right" class="btn btn-primary bg-danger btn-lg " href="/logout" role="button">Log Out</a>
+        </div>
+    </nav>
+    {{{body}}}
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#delete-post").on("click", function () {
+                console.log(this)
+                var item_id = $(this).data("id")
+                console.log(item_id)
+                $.ajax({
+                    url: "/items/" + item_id,
+                    method: "DELETE"
+                }).then(function () {
+                    alert("Item id: " + item_id + " deleted")
+                    location.reload()
                 })
-                $("#edit-post").on("click", function (e) {
-                    e.preventDefault()
-                    console.log(this)
-                    var id = $(this).data("id")
-                    var user = $(this).data("userid")
-                    console.log(user)
-                    var editedItem = {
-                        item_name: $("#item_name").val().trim(),
-                        item_price: $("#item_price").val().trim(),
-                        item_description: $("#item_description").val().trim(),
-                        item_img_url: $("#item_img_url").val().trim(),
-                        item_category: $("#item_category").val().trim(),
-                        item_location: $("#item_location").val().trim(),
-                    }
-                    $.ajax({
-                        url: "/myaccount/" + user + "/update/" + id,
-                        type: "PUT",
-                        data: editedItem
-                    }).then(function () {
-                        alert("Item Id: " + id + "updated!")
-                        window.location.href = ("/myaccount/" + user)
-                    })
+            })
+            $("#edit-post").on("click", function (e) {
+                e.preventDefault()
+                console.log(this)
+                var id = $(this).data("id")
+                var user = $(this).data("userid")
+                console.log(user)
+                var editedItem = {
+                    item_name: $("#item_name").val().trim(),
+                    item_price: $("#item_price").val().trim(),
+                    item_description: $("#item_description").val().trim(),
+                    item_img_url: $("#item_img_url").val().trim(),
+                    item_category: $("#item_category").val().trim(),
+                    item_location: $("#item_location").val().trim(),
+                }
+                $.ajax({
+                    url: "/myaccount/" + user + "/update/" + id,
+                    type: "PUT",
+                    data: editedItem
+                }).then(function () {
+                    alert("Item Id: " + id + "updated!")
+                    window.location.href = ("/myaccount/" + user)
                 })
+            })
 
 
-                $("#my_account").on("click", function (e) {
-                    e.preventDefault();
-                    $.get("/api/user_data").then(function (result) {
-                        console.log(result.id);
-                        window.location.href = ("/myaccount/" + result.id);
-                    })
+            $("#my_account").on("click", function (e) {
+                e.preventDefault();
+                $.get("/api/user_data").then(function (result) {
+                    console.log(result.id);
+                    window.location.href = ("/myaccount/" + result.id);
                 })
+            })
 
-            
+
             $("#my_cart").on("click", function (e) {
                 e.preventDefault();
                 $.get("/api/user_data").then(function (result) {
                     console.log(result.id);
-                    window.location.href = ("/myaccount/" + result.id+"/cart");
+                    window.location.href = ("/myaccount/" + result.id + "/cart");
                 })
             })
 
@@ -135,7 +122,8 @@
                     console.log(result.id)
                     window.location.href = ("/myaccount/" + result.id + "/post")
 
-                })})
+                })
+            })
 
 
             $("#new-post").on("click", function (e) {
@@ -143,25 +131,25 @@
                 var userId;
 
 
-                    $.get("/api/user_data").then(function (result) {
-                        console.log(result.id)
-                        userId = result.id
-                        console.log(userId)
-                        var newItem = {
-                            item_name: $("#item_name").val().trim(),
-                            item_price: $("#item_price").val().trim(),
-                            item_description: $("#item_description").val().trim(),
-                            item_img_url: $("#item_img_url").val().trim(),
-                            item_category: $("#item_category").val().trim(),
-                            item_location: $("#item_location").val().trim(),
-                            UserId: userId
-                        }
-                        console.log(newItem)
-                        $.post("/myaccount/" + userId + "/post", newItem).then(function (result) {
-                            alert("You made a post")
-                            window.location.href = "/home"
-                        })
+                $.get("/api/user_data").then(function (result) {
+                    console.log(result.id)
+                    userId = result.id
+                    console.log(userId)
+                    var newItem = {
+                        item_name: $("#item_name").val().trim(),
+                        item_price: $("#item_price").val().trim(),
+                        item_description: $("#item_description").val().trim(),
+                        item_img_url: $("#item_img_url").val().trim(),
+                        item_category: $("#item_category").val().trim(),
+                        item_location: $("#item_location").val().trim(),
+                        UserId: userId
+                    }
+                    console.log(newItem)
+                    $.post("/myaccount/" + userId + "/post", newItem).then(function (result) {
+                        alert("You made a post")
+                        window.location.href = "/home"
                     })
+                })
             })
 
             $("#add-to-cart").on("click", function () {
@@ -176,22 +164,22 @@
                     console.log(itemId)
                     $.ajax({ url: "/items/" + itemId, type: "PUT", data: { in_cart: in_cart } }).then(function (res) {
                         console.log(res)
-                        if(res=== "Item is reserved"){
+                        if (res === "Item is reserved") {
                             alert(res)
-                        }else{
-                        alert("You added this item to your cart")
+                        } else {
+                            alert("You added this item to your cart")
                         }
                     })
                 })
             })
-            
-
-            
-            
-            
 
 
-            })</script>
-    </body>
+
+
+
+
+
+        })</script>
+</body>
 
 </html>
