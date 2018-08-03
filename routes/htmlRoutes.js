@@ -71,7 +71,10 @@ module.exports = function(app) {
     }).then(function(result) {
       console.log(result.items);
       res.render("user", { user: result });
+    }).catch(function(err){
+      res.status(400).send(err);
     });
+  })
 
     app.get("/myaccount/:user_id/cart", function(req, res){
       db.items.findAll({where: {in_cart: req.params.user_id}}).then(function(cart){
@@ -102,5 +105,5 @@ module.exports = function(app) {
     app.get("*", function(req, res) {
       res.render("404");
     });
-  });
-};
+  };
+;
